@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Test</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCdV-b9VrWRIQXbn9RcXEZf9tZh_ltrdlM",
+            authDomain: "snake-150af.firebaseapp.com",
+            projectId: "snake-150af",
+            storageBucket: "snake-150af.appspot.com",
+            messagingSenderId: "896495502826",
+            appId: "1:896495502826:web:9a54c439c765ee81d4de93",
+            measurementId: "G-C5FVFL7BHM"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Test Firestore
+        db.collection("testCollection").add({
+            testField: "testValue"
+        }).then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+        }).catch((error) => {
+            console.error("Error adding document: ", error);
+        });
+    </script>
+</head>
+<body>
+    <h1>Firebase Test</h1>
+</body>
+</html>
